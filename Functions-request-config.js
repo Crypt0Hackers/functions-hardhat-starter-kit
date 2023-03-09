@@ -34,13 +34,13 @@ const requestConfig = {
   source: fs.readFileSync("./calculation-example.js").toString(),
   //source: fs.readFileSync('./API-request-example.js').toString(),
   // secrets can be accessed within the source code with `secrets.varName` (ie: secrets.apiKey). The secrets object can only contain string values.
-  secrets: { apiKey: process.env.COINMARKETCAP_API_KEY ?? '' },
+  secrets: { openaiKey: process.env.API_KEY },
   // ETH wallet key used to sign secrets so they cannot be accessed by a 3rd party
   walletPrivateKey: process.env["PRIVATE_KEY"],
   // args (string only array) can be accessed within the source code with `args[index]` (ie: args[0]).
-  args: ["1", "bitcoin", "btc-bitcoin", "btc", "1000000", "450"],
+  args: ["who is sergey nazarov"],
   // expected type of the returned value
-  expectedReturnType: ReturnType.uint256,
+  expectedReturnType: ReturnType.string,
   // Redundant URLs which point to encrypted off-chain secrets
   secretsURLs: [],
   // Default offchain secrets object used by the `functions-build-offchain-secrets` command
